@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.http import HttpResponse
+
+def root(request):
+    return HttpResponse("hello django")
+
+from blog import views
+
 urlpatterns = [
+    path("", root),
+    path("blog/", views.index),
     path("admin/", admin.site.urls),
 ]
