@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>Django</h1>
+
+    {% for post in post_list %}
+        <h3>{{ post.title }}</h3>
+    {% endfor %}
 </body>
 </html>
