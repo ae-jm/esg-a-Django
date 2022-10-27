@@ -11,6 +11,10 @@
 
     {% for post in post_list %}
         <h3>{{ post.title }}</h3>
+        <p>{{ created_at }}</p>
     {% endfor %}
+
+    <hr/>
+    <a href="/blog/new/">새 포스팅 쓰기</a>
 </body>
 </html>

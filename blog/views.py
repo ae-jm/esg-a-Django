@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from blog.models import Post
+from django.views.generic import CreateView
+from blog.forms import PostForm
+
 
 def index(request):
     # 전체 포스팅을 가져올 준비. 아직 가져오지는 않음.
@@ -14,4 +17,8 @@ def single_post_page(request, pk):
         "post":post,
     })
 
-
+post_new = CreateView.as_view(
+    form_class=PostForm,
+    model=Post,
+    success_url="/blog/",
+)
